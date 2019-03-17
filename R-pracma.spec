@@ -4,7 +4,7 @@
 #
 Name     : R-pracma
 Version  : 2.2.2
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/pracma_2.2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pracma_2.2.2.tar.gz
 Summary  : Practical Numerical Math Functions
@@ -13,10 +13,12 @@ License  : GPL-3.0
 BuildRequires : buildreq-R
 
 %description
-Provides a large number of functions from numerical analysis and
-    linear algebra, numerical optimization, differential equations,
-    time series, plus some well-known special mathematical functions.
-    Uses 'MATLAB' function names where appropriate to simplify porting.
+# Package PRACMA
+## Introduction
+This package provides R implementations of more advanced functions in
+numerical analysis, with a special view on on optimization and time
+series routines. Uses Matlab/Octave function names where appropriate
+to simplify porting.
 
 %prep
 %setup -q -c -n pracma
@@ -26,10 +28,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543752578
+export SOURCE_DATE_EPOCH=1552781698
 
 %install
-export SOURCE_DATE_EPOCH=1543752578
+export SOURCE_DATE_EPOCH=1552781698
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -65,8 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library pracma|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  pracma || :
 
 
 %files
@@ -98,3 +99,73 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/pracma/help/pracma.rdx
 /usr/lib64/R/library/pracma/html/00Index.html
 /usr/lib64/R/library/pracma/html/R.css
+/usr/lib64/R/library/pracma/tests/blkdiag.R
+/usr/lib64/R/library/pracma/tests/ceil.R
+/usr/lib64/R/library/pracma/tests/chebyshev.R
+/usr/lib64/R/library/pracma/tests/combs.R
+/usr/lib64/R/library/pracma/tests/compan.R
+/usr/lib64/R/library/pracma/tests/cond.R
+/usr/lib64/R/library/pracma/tests/conv.R
+/usr/lib64/R/library/pracma/tests/cross.R
+/usr/lib64/R/library/pracma/tests/crossn.R
+/usr/lib64/R/library/pracma/tests/deval.R
+/usr/lib64/R/library/pracma/tests/diag.R
+/usr/lib64/R/library/pracma/tests/distmat.R
+/usr/lib64/R/library/pracma/tests/dot.R
+/usr/lib64/R/library/pracma/tests/eig.R
+/usr/lib64/R/library/pracma/tests/factors.R
+/usr/lib64/R/library/pracma/tests/find.R
+/usr/lib64/R/library/pracma/tests/findintervals.R
+/usr/lib64/R/library/pracma/tests/findpeaks.R
+/usr/lib64/R/library/pracma/tests/flipdim.R
+/usr/lib64/R/library/pracma/tests/fnorm.R
+/usr/lib64/R/library/pracma/tests/gamma.R
+/usr/lib64/R/library/pracma/tests/gradient.R
+/usr/lib64/R/library/pracma/tests/hadamard.R
+/usr/lib64/R/library/pracma/tests/hankel.R
+/usr/lib64/R/library/pracma/tests/hilb.R
+/usr/lib64/R/library/pracma/tests/horner.R
+/usr/lib64/R/library/pracma/tests/hypot.R
+/usr/lib64/R/library/pracma/tests/interp1.R
+/usr/lib64/R/library/pracma/tests/interp2.R
+/usr/lib64/R/library/pracma/tests/inv.R
+/usr/lib64/R/library/pracma/tests/isprime.R
+/usr/lib64/R/library/pracma/tests/lambertW.R
+/usr/lib64/R/library/pracma/tests/linspace.R
+/usr/lib64/R/library/pracma/tests/magic.R
+/usr/lib64/R/library/pracma/tests/meshgrid.R
+/usr/lib64/R/library/pracma/tests/mldivide.R
+/usr/lib64/R/library/pracma/tests/mod.R
+/usr/lib64/R/library/pracma/tests/mode.R
+/usr/lib64/R/library/pracma/tests/nextpow2.R
+/usr/lib64/R/library/pracma/tests/norm.R
+/usr/lib64/R/library/pracma/tests/nthroot.R
+/usr/lib64/R/library/pracma/tests/pascal.R
+/usr/lib64/R/library/pracma/tests/pchip.R
+/usr/lib64/R/library/pracma/tests/perms.R
+/usr/lib64/R/library/pracma/tests/piecewise.R
+/usr/lib64/R/library/pracma/tests/poly.R
+/usr/lib64/R/library/pracma/tests/polyadd.R
+/usr/lib64/R/library/pracma/tests/polyarea.R
+/usr/lib64/R/library/pracma/tests/polyder.R
+/usr/lib64/R/library/pracma/tests/polyfit.R
+/usr/lib64/R/library/pracma/tests/polyint.R
+/usr/lib64/R/library/pracma/tests/polymul.R
+/usr/lib64/R/library/pracma/tests/polyval.R
+/usr/lib64/R/library/pracma/tests/pow2.R
+/usr/lib64/R/library/pracma/tests/primes.R
+/usr/lib64/R/library/pracma/tests/quad.R
+/usr/lib64/R/library/pracma/tests/quadrature.R
+/usr/lib64/R/library/pracma/tests/rank.R
+/usr/lib64/R/library/pracma/tests/rectint.R
+/usr/lib64/R/library/pracma/tests/regexp.R
+/usr/lib64/R/library/pracma/tests/roots.R
+/usr/lib64/R/library/pracma/tests/size.R
+/usr/lib64/R/library/pracma/tests/std.R
+/usr/lib64/R/library/pracma/tests/strfind.R
+/usr/lib64/R/library/pracma/tests/strings.R
+/usr/lib64/R/library/pracma/tests/subspace.R
+/usr/lib64/R/library/pracma/tests/trace.R
+/usr/lib64/R/library/pracma/tests/trapz.R
+/usr/lib64/R/library/pracma/tests/vander.R
+/usr/lib64/R/library/pracma/tests/wilkinson.R
