@@ -4,7 +4,7 @@
 #
 Name     : R-pracma
 Version  : 2.2.5
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/pracma_2.2.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pracma_2.2.5.tar.gz
 Summary  : Practical Numerical Math Functions
