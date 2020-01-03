@@ -4,7 +4,7 @@
 #
 Name     : R-pracma
 Version  : 2.2.9
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/pracma_2.2.9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pracma_2.2.9.tar.gz
 Summary  : Provides a large number of functions.
