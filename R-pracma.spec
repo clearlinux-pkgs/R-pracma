@@ -4,39 +4,38 @@
 #
 Name     : R-pracma
 Version  : 2.2.9
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/pracma_2.2.9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pracma_2.2.9.tar.gz
-Summary  : Provides a large number of functions.
+Summary  : Practical Numerical Math Functions
 Group    : Development/Tools
 License  : GPL-3.0
 BuildRequires : buildreq-R
 
 %description
-# Package PRACMA
-## Introduction
-This package provides R implementations of more advanced functions in
-numerical analysis, with a special view on on optimization and time
-series routines. Uses Matlab/Octave function names where appropriate
-to simplify porting.
+Provides a large number of functions from numerical analysis and
+    linear algebra, numerical optimization, differential equations,
+    time series, plus some well-known special mathematical functions.
+    Uses 'MATLAB' function names where appropriate to simplify porting.
 
 %prep
 %setup -q -c -n pracma
+cd %{_builddir}/pracma
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576531891
+export SOURCE_DATE_EPOCH=1589525559
 
 %install
-export SOURCE_DATE_EPOCH=1576531891
+export SOURCE_DATE_EPOCH=1589525559
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
